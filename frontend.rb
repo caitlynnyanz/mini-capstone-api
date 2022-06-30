@@ -11,7 +11,7 @@ user_input = gets.chomp.upcase
 
 until user_input == "N"
   if user_input == "Y"
-    table = TTY::Table.new(["Title", "Author", "Price"], [])
+    table = TTY::Table.new(["Title and author", "Price"], [])
 
     response = HTTP.get("http://localhost:3000/products")
 
@@ -19,8 +19,7 @@ until user_input == "N"
     index = 0
 
     while index < data.length
-      title = data[index]["title"]
-      author = data[index]["author"]
+      name = data[index]["name"]
       price = data[index]["price"]
 
       table << [title, author, price]

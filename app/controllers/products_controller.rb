@@ -12,8 +12,7 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new(
-      title: params[:title],
-      author: params[:author],
+      title: params[:name],
       price: params[:price],
       image_url: params[:image_url],
       description: params[:description],
@@ -26,8 +25,7 @@ class ProductsController < ApplicationController
     product_id = params[:id]
     product = Product.find_by(id: product_id)
 
-    product.title = params[:title] || product.title
-    product.author = params[:author] || product.author
+    product.name = params[:title] || product.name
     product.price = params[:price] || product.price
     product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
