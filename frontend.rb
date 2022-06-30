@@ -5,7 +5,7 @@ system "clear"
 
 table = TTY::Table.new(["Title", "Author", "Price"], [])
 
-response = HTTP.get("http://localhost:3000/all_products")
+response = HTTP.get("http://localhost:3000/products")
 
 data = JSON.parse(response.body)
 index = 0
