@@ -3,20 +3,38 @@ require "tty-table"
 
 system "clear"
 
-table = TTY::Table.new(["Title", "Author", "Price"], [])
+puts "Welcome to the book shop!"
 
-response = HTTP.get("http://localhost:3000/products")
+puts "Would you like to see all books currently available: [Y]es or [N]o"
 
-data = JSON.parse(response.body)
-index = 0
+user_input = gets.chomp.upcase
 
-while index < data.length
-  title = data[index]["title"]
-  author = data[index]["author"]
-  price = data[index]["price"]
 
-  table << [title, author, price]
-  index = index + 1
-end
+until user_input == "N"
+  if user_input == "Y"
+    table = TTY::Table.new(["Title", "Author", "Price"], [])
 
-puts table.render(:ascii)
+    response = HTTP.get("http://localhost:3000/products")
+
+    data = JSON.parse(response.body)
+    index = 0
+
+    while index < data.length
+      title = data[index]["title"]
+      author = data[index]["author"]
+      price = data[index]["price"]
+
+      table << [title, author, price]
+      index = index + 1
+    end
+
+    puts table.render(:ascii)
+  else
+    puts "Please try again.."
+    puts "Would you like to see all books currently available: [Y]es or [N]o"
+    user_input = gets.chomp.upcase
+  end
+
+  
+
+
