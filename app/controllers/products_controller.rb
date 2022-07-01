@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   def show
     product_id = params["id"]
     product = Product.find_by(id: product_id)
-    render json: product.as_json
+    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
   end
 
   def create

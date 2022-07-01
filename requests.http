@@ -2,7 +2,7 @@
 GET http://localhost:3000/products
 
 ### Products show action
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/4
 
 ### Products create action
 POST http://localhost:3000/products
@@ -20,7 +20,7 @@ PATCH http://localhost:3000/products/4
 Content-Type: application/json
 
 {
-  "image_url": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781625587534/the-picture-of-dorian-gray-9781625587534_hr.jpg"
+  "price": 8.99
 }
 
 ### Products delete action
