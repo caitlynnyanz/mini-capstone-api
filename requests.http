@@ -9,7 +9,7 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "test name",
+  
   "price": "test price", 
   "image_url": "test image",
   "description": "test description"
@@ -20,7 +20,7 @@ PATCH http://localhost:3000/products/4
 Content-Type: application/json
 
 {
-  "price": 8.99
+  "price": 0
 }
 
 ### Products delete action
