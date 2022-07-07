@@ -1,26 +1,26 @@
 ### Products index action
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 
 ### Products show action
-GET http://localhost:3000/products/4
+GET http://localhost:3000/products/4.json
 
 ### Products create action
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  
+  "name": "test name",
   "price": "test price", 
   "image_url": "test image",
-  "description": "test description"
+  "description": "test"
 }
 
 ### Products update action
-PATCH http://localhost:3000/products/4
+PATCH http://localhost:3000/products/4.json
 Content-Type: application/json
 
 {
-  "price": 0
+  "price": 9.99
 }
 
 ### Products delete action
