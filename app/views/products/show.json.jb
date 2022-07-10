@@ -4,7 +4,7 @@
   price: @product.price,
   description: @product.description,
   in_stock: @product.in_stock,
-  image_url: @product.image_url,
+  images: @product.images,
   supplier: @product.supplier,
   friendly_created_at: @product.friendly_created_at,
 }
