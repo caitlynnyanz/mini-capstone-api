@@ -1,3 +1,6 @@
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NDY3Mzd9.En4RKE5YsacBKogIm8J8LK3icYDs8rm6Kbe3XpqmWbY
+
 ### Products index action
 GET http://localhost:3000/products.json
 
@@ -6,24 +9,26 @@ GET http://localhost:3000/products/4.json
 
 ### Products create action
 POST http://localhost:3000/products.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
   "name": "test name",
-  "price": "test price", 
-  "description": "test"
+  "price": 1, 
+  "description": "test description",
+  "supplier_id": 2
 }
 
 ### Products update action
 PATCH http://localhost:3000/products/4.json
-Content-Type: application/json
-
+Authorization: Bearer {{jwt}}
 {
   "price": 9.99
 }
 
 ### Products delete action
-DELETE http://localhost:3000/products/5
+DELETE http://localhost:3000/products/6
+Authorization: Bearer {{jwt}}
 
 
 
@@ -55,3 +60,49 @@ Content-Type: application/json
 
 ### Suppliers delete action
 DELETE http://localhost:3000/suppliers/4
+
+
+### Images index action
+GET http://localhost:3000/images.json
+
+### Images show action
+GET http://localhost:3000/images/3.json
+
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "name test",
+  "email": "test@test.com", 
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "email@test.com",
+  "password": "password"
+}
+
+### Orders index action
+GET http://localhost:3000/orders
+Authorization: Bearer {{jwt}}
+
+### Orders show action
+GET http://localhost:3000/orders/4
+Authorization: Bearer {{jwt}}
+
+### Orders create action
+POST http://localhost:3000/orders
+Authorization: Bearer {{jwt}}
+
+{
+  "product_id": 3, 
+  "quantity": 2
+}
