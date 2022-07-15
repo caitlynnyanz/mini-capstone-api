@@ -5,6 +5,7 @@
   description: @product.description,
   in_stock: @product.in_stock,
   images: @product.images,
+  categories: @product.categories,
   supplier: @product.supplier,
-  friendly_created_at: @product.friendly_created_at,
+  friendly_created_at: @product.friendly_created_at
 }

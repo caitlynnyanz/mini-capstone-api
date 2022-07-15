@@ -2,7 +2,7 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NDY3Mzd9.En4RKE5YsacBKogIm8J8LK3icYDs8rm6Kbe3XpqmWbY
 
 ### Products index action
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=English%20Literature
 
 ### Products show action
 GET http://localhost:3000/products/4.json

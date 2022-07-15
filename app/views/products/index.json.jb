@@ -6,6 +6,7 @@
     description: product.description,
     in_stock: product.in_stock,
     images: product.images,
+    categories: product.categories,
     supplier: product.supplier,
   }
 end
