@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
 
   def index
     orders = current_user.orders
-
     render json: orders.as_json
   end
 
@@ -18,21 +17,27 @@ class OrdersController < ApplicationController
   end
   
   def create
-    product = Product.find_by(id: params[:product_id])
-    quantity = params[:quantity].to_i
-    subtotal = product.price * quantity
+    carted_products = current_user.carted_products.where(status: "carted")
+    
+    subtotal = 0
+    carted_products.map do |carted_product|
+      subtotal += carted_product.quantity * carted_product.product.price
+    end
+
     tax = subtotal * 0.06
     total = subtotal + tax
-
-    order = Order.create!(
+    order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: quantity,
       subtotal: subtotal,
       tax: tax,
       total: total
     )
     
-    render json: order.as_json
+    if order.save
+      carted_products.update_all(status: "purchased", order_id: order.id)
+      render json: order.as_json
+    else
+      render json: { errors: order.errors.full_messages }, status: 422
+    end
   end
 end

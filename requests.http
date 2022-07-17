@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NDY3Mzd9.En4RKE5YsacBKogIm8J8LK3icYDs8rm6Kbe3XpqmWbY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTgxNTQxMTR9.ecqaSv6JVHrNg5Kxlrhkp3kO4iz3M3FMDl_qsoKSuRo
 
 ### Products index action
 GET http://localhost:3000/products.json?category=English%20Literature
@@ -102,7 +102,25 @@ Authorization: Bearer {{jwt}}
 POST http://localhost:3000/orders
 Authorization: Bearer {{jwt}}
 
+
+### Carted_Product index action
+GET http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
+
+### Carted_Product show action
+GET http://localhost:3000/carted_products/1
+Authorization: Bearer {{jwt}}
+
+### Carted_Product create action
+POST http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
 {
-  "product_id": 3, 
-  "quantity": 2
+  "product_id": 1, 
+  "quantity": 1
 }
+
+### Carted_Product delete action
+DELETE http://localhost:3000/carted_products/1
+Authorization: Bearer {{jwt}}

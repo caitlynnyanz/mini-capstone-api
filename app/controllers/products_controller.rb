@@ -57,3 +57,21 @@ class ProductsController < ApplicationController
     render json: { message: "Product successfully deleted!" }
   end
 end
+
+
+
+
+### Decompostion of Shopping Cart
+
+#create model Carted_Product user_id:integer product_id:integer quantity:integer order_id:integer status:boolean / rails db:migrate
+##status : boolean (true = carted, false = purchased, nil = removed)
+#create carted_products controller
+#relating tables
+#update order controller
+#creating routes
+#index, show, create, update, delete (remove)
+
+
+
+
+
