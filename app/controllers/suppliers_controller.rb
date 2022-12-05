@@ -14,7 +14,7 @@ class SuppliersController < ApplicationController
     supplier = Supplier.new(
       name: params[:name],
       email: params[:email],
-      phone_number: params[:phone_number],
+      phone_number: params[:phone_number]
     )
     @supplier = supplier
     if supplier.save

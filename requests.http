@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTgxNTQxMTR9.ecqaSv6JVHrNg5Kxlrhkp3kO4iz3M3FMDl_qsoKSuRo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg3NDIyOTR9.o1Kc7V7T1L585_OyL-F8evqJi2-vzZ9N-75q3IttKVM
 
 ### Products index action
 GET http://localhost:3000/products.json?category=English%20Literature
@@ -95,7 +95,7 @@ GET http://localhost:3000/orders
 Authorization: Bearer {{jwt}}
 
 ### Orders show action
-GET http://localhost:3000/orders/4
+GET http://localhost:3000/orders/9
 Authorization: Bearer {{jwt}}
 
 ### Orders create action

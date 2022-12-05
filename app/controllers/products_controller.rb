@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
-      supplier_id: params[:supplier_id],
+      supplier_id: params[:supplier_id]
     )
     @product = product
     if product.save
